@@ -50,7 +50,6 @@ class User extends Authenticatable
         return $this->role === self::ROLE_STUDENT;
     }
 
-
     /**
      * The attributes that are mass assignable.
      *
