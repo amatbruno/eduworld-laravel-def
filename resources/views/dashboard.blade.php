@@ -5,7 +5,7 @@
             {{ __('Admin Dashboard') }}
             @endif
             @if (auth()->user()->isTeacher())
-            {{ __('teacher Dashboard') }}
+            {{ __('Teacher Dashboard') }}
             @endif
             @if (auth()->user()->isStudent())
             {{ __('Student Dashboard') }}
@@ -25,6 +25,7 @@
                 @endif
                 @if (auth()->user()->isStudent())
                     <h1>eres estudiante</h1>
+                    <livewire:button-dashboard/>
                 @endif
             </div>
         </div>
