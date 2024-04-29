@@ -1,16 +1,16 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <h2 class="font-semibold text-2xl text-white leading-tight">
             @if (auth()->user()->isAdmin())
-            {{ __('Admin Dashboard') }}
+                {{ __('Admin Dashboard') }}
             @endif
             @if (auth()->user()->isTeacher())
-            {{ __('Teacher Dashboard') }}
+                {{ __('Teacher Dashboard') }}
             @endif
             @if (auth()->user()->isStudent())
-            {{ __('Student Dashboard') }}
+                {{ __('Student Dashboard') }}
             @endif
-            
+
         </h2>
     </x-slot>
 
@@ -19,13 +19,15 @@
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 @if (auth()->user()->isAdmin())
                     <h1>eres administrador</h1>
+                    <livewire:button-dashboard-admin />
                 @endif
                 @if (auth()->user()->isTeacher())
                     <h1>eres profesor</h1>
+                    <livewire:button-dashboard-teacher />
                 @endif
                 @if (auth()->user()->isStudent())
                     <h1>eres estudiante</h1>
-                    <livewire:button-dashboard/>
+                    <livewire:button-dashboard-student />
                 @endif
             </div>
         </div>
