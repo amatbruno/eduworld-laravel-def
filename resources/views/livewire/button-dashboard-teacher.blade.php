@@ -1,5 +1,5 @@
 <div class="flex flex-col items-center gap-2 py-3">
-    <a class="flex py-14 w-[300px] text-gray-400 text-center font-bold px-10 text-xl rounded-2xl border-4
+    <a class="flex items-center py-14 w-[300px] h-[150px] text-gray-400 text-center font-bold px-10 text-xl rounded-2xl border-4
         hover:text-gray-700 hover:border-4 hover:border-gray-700 transition-all"
         href=" {{ url($routeManageStudents) }} ">
         <svg xmlns="http://www.w3.org/2000/svg" width="60" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -9,7 +9,7 @@
             <path d="M22 9l-10 -4l-10 4l10 4l10 -4v6" />
             <path d="M6 10.6v5.4a6 3 0 0 0 12 0v-5.4" />
         </svg>Students Management</a>
-    <a class="flex py-14 w-[300px] text-gray-400 text-center font-bold px-10 text-xl rounded-2xl border-4
+    <a class="flex items-center py-14 w-[300px] h-[150px] text-gray-400 text-center font-bold px-10 text-xl rounded-2xl border-4
         hover:text-gray-700 hover:border-4 hover:border-gray-700 transition-all"
         href=" {{ url($routeManageGrades) }} ">
         <svg xmlns="http://www.w3.org/2000/svg" width="60" viewBox="0 0 24 24" fill="none" stroke="currentColor"

@@ -16,19 +16,21 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg flex justify-center items-center gap-16 py-3">
                 @if (auth()->user()->isAdmin())
-                    <h1>eres administrador</h1>
                     <livewire:button-dashboard-admin />
                 @endif
                 @if (auth()->user()->isTeacher())
-                    <h1>eres profesor</h1>
                     <livewire:button-dashboard-teacher />
                 @endif
                 @if (auth()->user()->isStudent())
-                    <h1>eres estudiante</h1>
                     <livewire:button-dashboard-student />
                 @endif
+
+                <div class="flex justify-center">
+                    <livewire:calendar />
+                </div>
+
             </div>
         </div>
     </div>

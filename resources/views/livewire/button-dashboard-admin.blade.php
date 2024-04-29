@@ -1,5 +1,5 @@
 <div class="flex justify-center py-3">
-    <a class="flex gap-3 items-center py-14 w-[300px] text-gray-400 text-center font-bold px-10 text-xl rounded-2xl border-4
+    <a class="flex gap-3 items-center justify-center py-14 w-[300px] h-fit text-gray-400 text-center font-bold px-10 text-xl rounded-2xl border-4
         hover:text-gray-700 hover:border-4 hover:border-gray-700 transition-all"
         href=" {{ url($routeAdminPanel) }} ">
         <svg xmlns="http://www.w3.org/2000/svg" width="50" viewBox="0 0 24 24" fill="none" stroke="currentColor"
