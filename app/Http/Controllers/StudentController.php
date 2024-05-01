@@ -7,14 +7,10 @@ use App\Models\User;
 
 class StudentController extends Controller
 {
-    public function showStudentsPage(string $role)
+    public function listStudents()
     {
-        $studentRole = 'STUDENT';
+        $students = User::where('role', User::ROLE_STUDENT)->get();
 
-        $studentUsers = User::whereHas('role', function ($query) use ($studentRole) {
-            $query->where('name', $studentRole);
-        })->get();
-
-        return view('students.page', compact('studentUsers'));
+        return view('students.page', ['students' => $students]);
     }
 }

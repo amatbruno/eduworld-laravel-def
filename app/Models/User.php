@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-
 use Filament\Tables\Columns\Layout\Panel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
