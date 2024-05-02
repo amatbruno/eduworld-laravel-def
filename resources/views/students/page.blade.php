@@ -6,11 +6,21 @@
         </div>
     </x-slot>
 
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 mt-8">
-        <a class="text-white underline font-medium text-xl" href="{{ route('enroll.show') }}">Enroll students to a course</a>
+    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 mt-8 flex justify-between items-center">
+        <a class="text-white underline font-medium text-xl" href="{{ route('enroll.show') }}">Enroll students to a
+            course</a>
+        <form action="{{ url('/students') }}" method="GET">
+            <select name="course_id" id="course_id" onchange="this.form.submit()">
+                <option value="">Select Course</option>
+                <option value="all">All Students</option>
+                @foreach ($courses as $course)
+                    <option value="{{ $course->id }}">{{ $course->title }}</option>
+                @endforeach
+            </select>
+        </form>
     </div>
 
-    <div class="py-8">
+    <div class="py-8" id="student-list">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg flex flex-col justify-start gap-5 p-5">
                 @foreach ($students as $s)
@@ -28,5 +38,4 @@
             </div>
         </div>
     </div>
-
 </x-app-layout>

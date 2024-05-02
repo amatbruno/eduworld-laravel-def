@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <div class="flex items-center gap-16">
-            <a class="text-white text-xl font-black" href="{{ url('/dashboard') }}"><-- </a>
+            <a class="text-white text-xl font-black" href="{{ url('/students') }}"><-- </a>
                     <h2 class="font-semibold text-2xl text-white leading-tight">Enroll students to course</h2>
         </div>
     </x-slot>
