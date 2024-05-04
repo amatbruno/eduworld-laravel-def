@@ -21,4 +21,18 @@
             <path d="M6 14m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
             <path d="M4.5 17l-1.5 5l3 -1.5l3 1.5l-1.5 -5" />
         </svg>Grades Management</a>
+    <a class="flex items-center py-14 w-[300px] h-[150px] text-gray-400 text-center font-bold px-10 text-xl rounded-2xl border-4
+        hover:text-gray-700 hover:border-4 hover:border-gray-700 transition-all"
+        href=" {{ url($routeManageTasks) }} ">
+        <svg xmlns="http://www.w3.org/2000/svg" width="60" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="icon icon-tabler icons-tabler-outline icon-tabler-list-check">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M3.5 5.5l1.5 1.5l2.5 -2.5" />
+            <path d="M3.5 11.5l1.5 1.5l2.5 -2.5" />
+            <path d="M3.5 17.5l1.5 1.5l2.5 -2.5" />
+            <path d="M11 6l9 0" />
+            <path d="M11 12l9 0" />
+            <path d="M11 18l9 0" />
+        </svg>Tasks Management</a>
 </div>

@@ -6,9 +6,9 @@ use Livewire\Component;
 
 class ButtonDashboardTeacher extends Component
 {
-
     public $routeManageStudents = '/students'; //Prop for route students
     public $routeManageGrades = '/'; //Prop for route grades
+    public $routeManageTasks = '/tasks'; //Prop for route tasks
 
     public function render()
     {

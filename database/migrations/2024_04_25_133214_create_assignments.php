@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('assignments', function (Blueprint $table) {
             $table->id()->autoIncrement()->primary();
-            $table->foreignId('course_id');
             $table->string('title')->unique();
             $table->string('description');
             $table->timestamp('due_date')->nullable();
