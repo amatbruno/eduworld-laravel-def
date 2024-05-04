@@ -10,6 +10,7 @@
         <a class="text-white underline font-medium text-xl" href="{{ route('add.show') }}">Add new task</a>
         <form action="{{ url('/tasks') }}" method="GET">
             <select name="course_id" id="course_id" onchange="this.form.submit()">
+                <option selected="selected">Select a course</option>
                 <option value="all">All Assignments</option>
                 @foreach ($courses as $course)
                     <option value="{{ $course->id }}">{{ $course->title }}</option>
