@@ -20,6 +20,7 @@ class AddAssignmentController extends Controller
             'description' => 'required|string',
             'due_date' => 'required|date',
             'course_id' => 'required|exists:courses,id',
+            'thumbnail' => 'max:200',
         ]);
 
         // Create a new assignment
@@ -27,6 +28,7 @@ class AddAssignmentController extends Controller
             'title' => $request->title,
             'description' => $request->description,
             'due_date' => $request->due_date,
+            'thumbnail' => $request->thumbnail,
         ]);
 
         // Attach the assignment to the selected course
