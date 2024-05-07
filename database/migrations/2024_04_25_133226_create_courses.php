@@ -16,6 +16,7 @@ return new class extends Migration
             $table->id()->autoIncrement()->primary();
             $table->string('title');
             $table->string('description');
+            $table->foreignIdFor(User::class);
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
         });

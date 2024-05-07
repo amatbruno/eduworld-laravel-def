@@ -18,7 +18,6 @@ return new class extends Migration
             $table->timestamp('due_date')->nullable();
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
-            $table->string('thumbnail')->nullable();
         });
 
         Schema::create('assignments_submissions', function (Blueprint $table) {
