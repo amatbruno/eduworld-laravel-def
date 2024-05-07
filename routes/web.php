@@ -11,6 +11,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::view('/{any?}', 'app')
+    ->where('any', '.*');
+
 
 Route::get('/students', [StudentController::class, 'listStudents']);
 Route::get('/tasks', [AssignmentController::class, 'listAssignments']);

@@ -7,6 +7,8 @@
     <title>Eduworld</title>
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+    @viteReactRefresh
+    @vite(['resources/js/app.jsx'])
     @vite('resources/css/app.css')
 </head>
 
@@ -54,6 +56,7 @@
                             and engaging educational experience like never before. Whether you're seeking
                             to master a new skill, explore a passion, or enhance your academic performance.</h1>
                         <img src="/images/intro-img.png" draggable="false" alt="intro_img" />
+                        <div id="root"></div>
                     </div>
 
                     <section class='mt-24'>
