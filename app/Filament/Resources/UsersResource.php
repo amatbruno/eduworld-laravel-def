@@ -3,16 +3,12 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\UsersResource\Pages;
-use App\Filament\Resources\UsersResource\RelationManagers;
 use App\Models\User;
-use App\Models\Users;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class UsersResource extends Resource
 {
@@ -36,7 +32,7 @@ class UsersResource extends Resource
     {
         return $table
             ->columns([
-                // Tables\Columns\ImageColumn::make('profile_photo'),
+                Tables\Columns\ImageColumn::make('profile_photo'),
                 Tables\Columns\TextColumn::make('name'),
                 Tables\Columns\TextColumn::make('email'),
                 Tables\Columns\TextColumn::make('role'),

@@ -1,10 +1,11 @@
 import { createRoot } from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import RadialMenu from './ReactComponents/radialMenu';
 
 const routes = [
     {
-        path: '/',
-        element: <div>Hello from react app</div>
+        path: '/games',
+        element: <RadialMenu />
     }
 ]
 

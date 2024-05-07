@@ -7,12 +7,17 @@ use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 
+//Default routes
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/games', function () {
+    return view('students.games-menu');
+});
 
-Route::view('/{any?}', 'app')
-    ->where('any', '.*');
+
+//Routes for components
+Route::view('/games', 'students.games-menu');
 
 
 Route::get('/students', [StudentController::class, 'listStudents']);
