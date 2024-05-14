@@ -31,7 +31,7 @@ export default function Map() {
                                             geography={geo}
                                             style={{
                                                 hover: {
-                                                    fill: '#e8a85f',
+                                                    fill: '#e69c47',
                                                 },
                                             }}
                                         />

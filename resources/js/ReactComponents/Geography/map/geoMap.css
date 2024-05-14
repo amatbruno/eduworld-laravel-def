@@ -1,3 +1,8 @@
 #mapStyle:hover {
     cursor: pointer;
+    transition: 1s all;
+}
+
+#mapStyle {
+    transition: 1s all;
 }
