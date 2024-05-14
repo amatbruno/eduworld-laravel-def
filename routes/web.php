@@ -14,10 +14,14 @@ Route::get('/', function () {
 Route::get('/games', function () {
     return view('students.games-menu');
 });
+Route::get('/geography', function () {
+    return view('students.geography');
+});
 
 
 //Routes for components
 Route::view('/games', 'students.games-menu');
+Route::view('/geography', 'students.geography');
 
 
 Route::get('/students', [StudentController::class, 'listStudents']);

@@ -1,7 +1,6 @@
 body {
     margin: 0;
     padding: 0;
-    height: 80%;
 }
 
 body {
@@ -10,11 +9,11 @@ body {
 
 .wrap {
     position: relative;
-    width: 80vmin;
-    height: 80vmin;
+    width: 60vmin;
+    height: 60vmin;
     margin: 0 auto;
     background: inherit;
-    transform: scale(0.2) translatez(0px);
+    transform: scale(0.2) translatey(0px);
     opacity: 0;
     transition: transform .5s, opacity .5s;
 }
@@ -33,7 +32,7 @@ body {
 .link div {
     height: 100%;
     background-size: cover;
-    opacity: 0.5;
+    opacity: 0.3;
     transition: opacity .5s;
     border-radius: inherit;
 }
@@ -91,7 +90,7 @@ span {
     position: relative;
     display: block;
     margin: 0 auto;
-    top: 45vmin;
+    top: 35vmin;
     width: 10vmin;
     height: 10vmin;
     border-radius: 100%;

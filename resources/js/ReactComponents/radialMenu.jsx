@@ -10,7 +10,7 @@ export default function radialMenu() {
             <div className="wrap">
                 <a className='link' href="#"><div></div></a>
                 <a className='link' href="#"><div></div></a>
-                <a className='link' href="#"><div></div></a>
+                <a className='link' href="/geography"><div></div></a>
                 <a className='link' href="#"><div></div></a>
             </div>
         </div>
