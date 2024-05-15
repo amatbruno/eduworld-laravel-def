@@ -1,0 +1,11 @@
+.correct {
+    fill: green;
+}
+
+.incorrect {
+    fill: red;
+}
+
+.community {
+    cursor: pointer;
+}

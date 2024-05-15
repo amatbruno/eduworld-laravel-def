@@ -1,7 +1,7 @@
 import { createRoot } from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import RadialMenu from './ReactComponents/radialMenu';
-import Geography from './ReactComponents/Geography/Geography';
+import GeographyComponent from './ReactComponents/Geography/Geography';
 
 const routes = [
     {
@@ -10,7 +10,7 @@ const routes = [
     },
     {
         path: '/geography',
-        element: <Geography />
+        element: <GeographyComponent />
     }
 ]
 
