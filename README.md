@@ -4,8 +4,8 @@
  It provides a platform for managing student, teacher, course, and other related school administration information.
 
  - PREREQUISITES
-PHP >= 7.3
-Composer
-Node.js >= 12.x
-NPM or Yarn
-MySQL or any other database supported by Laravel
+ * PHP >= 7.3
+ * Composer
+ * Node.js >= 12.x
+ * NPM or Yarn
+ * MySQL or any other database supported by Laravel
