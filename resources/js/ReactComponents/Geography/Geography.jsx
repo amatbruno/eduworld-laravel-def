@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 import { ComposableMap, Geographies, Geography, Marker } from "react-simple-maps"
 import './Geography.css';
 import mapdata from '../../../utils/mapdata';
@@ -10,6 +11,12 @@ export default function GeographyComponent() {
     const [selectedCommunity, setSelectedCommunity] = useState(null);
     const [countCorrect, setCountCorrect] = useState(0);
     const [remainingCommunities, setRemainingCommunities] = useState([]);
+    const [gameOver, setGameOver] = useState(false);
+    const [finalScore, setFinalScore] = useState(0);
+
+    useEffect(() => {
+        getRandomData();
+    }, [remainingCommunities]);
 
     const getRandomData = () => {
         if (remainingCommunities.length === 0) {
@@ -38,19 +45,30 @@ export default function GeographyComponent() {
             setRemainingCommunities(prevCommunities => prevCommunities.filter(community => community !== data));
             setCountCorrect(countCorrect + 1);
         }
+
+        if (remainingCommunities.length === 1) {
+            setGameOver(true);
+            setFinalScore(countCorrect);
+        }
     }
 
-    useEffect(() => {
-        getRandomData();
-    }, [remainingCommunities]);
+    const restartGame = () => {
+        setRandomData(null);
+        setSelectedCommunity(null);
+        setCountCorrect(0);
+        setRemainingCommunities([]);
+        setGameOver(false);
+        setFinalScore(0);
+    }
 
     return (
-        <section className='mt-10'>
-            <div>
-                <h1 className='mb-5 text-xl text-white font-bold italic flex gap-2'>Points: <p className='font-normal'>{countCorrect}</p></h1>
-            </div>
+        <main className='mt-10'>
+            <article className='flex gap-2 text-white items-center justify-start text-xl mb-4'>
+                <h1 className='font-bold'>Points: </h1>
+                <p className='font-normal italic'>{countCorrect}</p>
+            </article>
 
-            <div style={{
+            <section style={{
                 width: '900px',
                 height: '450px',
                 background: 'white',
@@ -93,8 +111,27 @@ export default function GeographyComponent() {
                         }}
                     </Geographies>
                 </ComposableMap>
-            </div>
-            <Question name={randomData} />
-        </section>
+            </section>
+            <section className='w-[900px] bg-white rounded-xl mt-7 py-6 flex text-2xl gap-4 items-center justify-center'>
+                {/* {
+                    gameOver === true ?
+                        <div className='flex '>
+                            <p className="text-xl">Fin del juego! Tu puntuacion final ha sido de <span className='font-bold'>{finalScore} pts.</span></p>
+                            <div>
+                                <button>Restart Game</button>
+                                <button>Return To Menu</button>
+                            </div>
+                        </div> :
+                        <Question name={randomData} />
+                } */}
+                <div className='flex flex-col justify-center items-center gap-7'>
+                    <p className="text-xl">Fin del juego! Tu puntuacion final ha sido de <span className='font-bold'>{finalScore} pts.</span></p>
+                    <div className='text-xl flex gap-7'>
+                        <button className='border-orange-400' onClick={restartGame}>Restart Game</button>
+                        <Link className='bg-blue-300' to='/games' >Return to Menu</Link>
+                    </div>
+                </div>
+            </section>
+        </main>
     )
 }

@@ -32,7 +32,7 @@ body {
 .link div {
     height: 100%;
     background-size: cover;
-    opacity: 0.3;
+    opacity: 0.35;
     transition: opacity .5s;
     border-radius: inherit;
 }
@@ -40,23 +40,22 @@ body {
 .link:nth-child(1) {
     border-radius: 40vmin 0 0 0;
     transform-origin: 110% 110%;
-    transition: transform .4s .15s;
+    transition: transform .3s .15s;
 }
 
 .link:nth-child(1):hover {
-    transition: all .8s;
+    transition: all .4s;
 }
 
 .link:nth-child(1) div {
     background-image: url('/public/images/radialImages/history.png');
-    transition: all .8s;
 }
 
 .link:nth-child(2) {
     border-radius: 0 40vmin 0 0;
     left: 52.5%;
     transform-origin: -10% 110%;
-    transition: transform .4s .2s;
+    transition: transform .3s .2s;
 }
 
 .link:nth-child(2) div {
@@ -67,7 +66,7 @@ body {
     border-radius: 0 0 0 40vmin;
     top: 52.5%;
     transform-origin: 110% -10%;
-    transition: transform .4s .25s;
+    transition: transform .3s .25s;
 }
 
 .link:nth-child(3) div {
@@ -79,14 +78,14 @@ body {
     top: 52.5%;
     left: 52.5%;
     transform-origin: -10% -10%;
-    transition: transform .4s .3s;
+    transition: transform .3s .3s;
 }
 
 .link:nth-child(4) div {
     background-image: url('/public/images/radialImages/music.png');
 }
 
-span {
+#span-1 {
     position: relative;
     display: block;
     margin: 0 auto;
@@ -98,7 +97,7 @@ span {
     transform: translateZ(0px);
 }
 
-span span {
+#span-1 #span-2 {
     position: absolute;
     width: 60%;
     height: 3px;
@@ -108,8 +107,8 @@ span span {
     border-radius: 0;
 }
 
-span span:after,
-span span:before {
+#span-1 span:after,
+#span-1 span:before {
     content: '';
     position: absolute;
     left: 0;
@@ -119,17 +118,17 @@ span span:before {
     background: inherit;
 }
 
-span span:after {
+#span-1 span:after {
     top: 1.5vmin;
 }
 
-span:hover+.wrap,
+#span-1:hover+.wrap,
 .wrap:hover {
     transform: scale(.8) translateZ(0px);
     opacity: 1;
 }
 
-span:hover+.wrap .link,
+#span-1:hover+.wrap .link,
 .wrap:hover .link {
     transform: scale(1) translatez(0px);
 }

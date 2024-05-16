@@ -4,8 +4,8 @@ import './radialMenu.css';
 export default function radialMenu() {
     return (
         <div>
-            <span>
-                <span></span>
+            <span id='span-1'>
+                <span id='span-2'></span>
             </span>
             <div className="wrap">
                 <a className='link' href="#"><div></div></a>
