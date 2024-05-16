@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import { ComposableMap, Geographies, Geography, Marker } from "react-simple-maps"
 import './Geography.css';
 import mapdata from '../../../utils/mapdata';
@@ -113,24 +113,18 @@ export default function GeographyComponent() {
                 </ComposableMap>
             </section>
             <section className='w-[900px] bg-white rounded-xl mt-7 py-6 flex text-2xl gap-4 items-center justify-center'>
-                {/* {
+                {
                     gameOver === true ?
-                        <div className='flex '>
+                        <div className='flex flex-col justify-center items-center gap-7'>
                             <p className="text-xl">Fin del juego! Tu puntuacion final ha sido de <span className='font-bold'>{finalScore} pts.</span></p>
-                            <div>
-                                <button>Restart Game</button>
-                                <button>Return To Menu</button>
+                            <div className='text-xl flex gap-7'>
+                                <button className='border-orange-400' onClick={restartGame}>Restart Game</button>
+                                <a href="/games">Return to Main menu</a>
                             </div>
                         </div> :
                         <Question name={randomData} />
-                } */}
-                <div className='flex flex-col justify-center items-center gap-7'>
-                    <p className="text-xl">Fin del juego! Tu puntuacion final ha sido de <span className='font-bold'>{finalScore} pts.</span></p>
-                    <div className='text-xl flex gap-7'>
-                        <button className='border-orange-400' onClick={restartGame}>Restart Game</button>
-                        <Link className='bg-blue-300' to='/games' >Return to Menu</Link>
-                    </div>
-                </div>
+                }
+
             </section>
         </main>
     )
