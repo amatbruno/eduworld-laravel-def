@@ -20,13 +20,21 @@ class AddAssignmentController extends Controller
             'description' => 'required|string',
             'due_date' => 'required|date',
             'course_id' => 'required|exists:courses,id',
+            'thumbnail' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
+
+        $thumbnailPath = null;
+        if ($request->hasFile('thumbnail')) {
+            $file = $request->file('thumbnail');
+            $thumbnailPath = $file->store('thumbnail', 'public');
+        }
 
         // Create a new assignment
         $assignment = Assignment::create([
             'title' => $request->title,
             'description' => $request->description,
             'due_date' => $request->due_date,
+            'thumbnail' => $thumbnailPath
         ]);
 
         // Attach the assignment to the selected course

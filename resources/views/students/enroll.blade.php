@@ -6,6 +6,18 @@
         </div>
     </x-slot>
 
+    @if (session('success'))
+        <div class="bg-green-500 text-white p-4 rounded mb-4">
+            {{ session('success') }}
+        </div>
+    @endif
+
+    @if (session('error'))
+        <div class="bg-red-500 text-white p-4 rounded mb-4">
+            {{ session('error') }}
+        </div>
+    @endif
+
     <form class="flex gap-1 flex-col border justify-center w-[500px] mx-auto mt-16 px-7 py-14 bg-white rounded-xl"
         action="{{ route('enroll') }}" method="POST">
         @csrf

@@ -79,9 +79,9 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $appends = [
-        'profile_photo_path',
-    ];
+    // protected $appends = [
+    //     'profile_photo_path',
+    // ];
 
     /**
      * Get the attributes that should be cast.
@@ -98,6 +98,6 @@ class User extends Authenticatable
 
     public function courses()
     {
-        return $this->belongsToMany(Course::class)->withTimestamps();
+        return $this->belongsToMany(Course::class, 'course_user')->withTimestamps();
     }
 }
