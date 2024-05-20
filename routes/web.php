@@ -1,11 +1,12 @@
 <?php
 
-use App\Http\Controllers\AddAssignmentController;
+use App\Http\Controllers\ManageAssignmentController;
 use App\Http\Controllers\AssignmentController;
 use App\Http\Controllers\EnrollmentController;
 use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\SubjectController;
 
 //Default routes
 Route::get('/', function () {
@@ -26,14 +27,16 @@ Route::view('/geography', 'students.geography');
 
 Route::get('/students', [StudentController::class, 'listStudents']);
 Route::get('/tasks', [AssignmentController::class, 'listAssignments']);
+Route::get('/grades', [SubjectController::class, 'listGrades']);
 
 
 Route::get('/enroll', [EnrollmentController::class, 'show'])->name('enroll.show');
-Route::get('/add', [AddAssignmentController::class, 'show'])->name('add.show');
+Route::get('/add', [ManageAssignmentController::class, 'show'])->name('add.show');
 
 
 Route::post('/enroll', [EnrollmentController::class, 'enroll'])->name('enroll');
-Route::post('/add', [AddAssignmentController::class, 'add'])->name('add');
+Route::post('/add', [ManageAssignmentController::class, 'add'])->name('add');
+Route::delete('/delete/{id}', [ManageAssignmentController::class, 'delete'])->name('delete');
 
 
 

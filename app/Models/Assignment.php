@@ -13,7 +13,8 @@ class Assignment extends Model
         'title',
         'description',
         'due_date',
-        'thumbnail'
+        'thumbnail',
+        'subject_id'
     ];
 
     public function courses()
@@ -24,5 +25,10 @@ class Assignment extends Model
     public function users()
     {
         return $this->belongsToMany(User::class)->withTimestamps();
+    }
+
+    public function subject()
+    {
+        return $this->belongsTo(Subject::class);
     }
 }

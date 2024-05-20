@@ -43,8 +43,12 @@
                             <a class="bg-green-600 transition-all hover:bg-green-700 py-2 rounded-lg px-3 text-white"
                                 href="">View Task</a>
                         </div>
-                        <div id="show-delete" class="showDelete">
-                            <a href="">Delete Task</a>
+                        <div>
+                            <form action="{{ url('delete/' . $assig->id) }}" method="POST">
+                                @csrf
+                                @method('delete')
+                                <button class="w-full py-1 text-white font-medium text-lg bg-red-900 hover:bg-red-700 transition-all rounded-b-lg" onclick="this.form.submit()">Delete Task</button>
+                            </form>
                         </div>
                     </article>
                 @endforeach

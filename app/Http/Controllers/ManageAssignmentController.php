@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Assignment;
 use App\Models\Course;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
-class AddAssignmentController extends Controller
+class ManageAssignmentController extends Controller
 {
     public function show()
     {
@@ -42,5 +43,15 @@ class AddAssignmentController extends Controller
         $course->assignments()->attach($assignment);
 
         return back()->with('success', 'Task added to the course successfully!');
+    }
+
+    public function delete($id)
+    {
+        $assignment = Assignment::find($id);
+        $assignment->delete();
+
+        DB::table('assignment_course')->where('assignment_id', $id)->delete();
+
+        return back()->with('success', 'Task deleted successfully!');
     }
 }
