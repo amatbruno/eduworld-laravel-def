@@ -3,7 +3,6 @@
 use App\Http\Controllers\ManageAssignmentController;
 use App\Http\Controllers\AssignmentController;
 use App\Http\Controllers\EnrollmentController;
-use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\SubjectController;
@@ -27,7 +26,7 @@ Route::view('/geography', 'students.geography');
 
 Route::get('/students', [StudentController::class, 'listStudents']);
 Route::get('/tasks', [AssignmentController::class, 'listAssignments']);
-Route::get('/grades', [SubjectController::class, 'listGrades']);
+Route::get('/grades/{id}', [StudentController::class, 'showGrades'])->name('grades');
 
 
 Route::get('/enroll', [EnrollmentController::class, 'show'])->name('enroll.show');

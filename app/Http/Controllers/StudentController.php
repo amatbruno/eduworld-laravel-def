@@ -25,4 +25,12 @@ class StudentController extends Controller
 
         return view('students.page', compact('students', 'courses'));
     }
+
+    public function showGrades($id)
+    {
+        $student = User::with('scores.subject')->findOrFail($id);
+        $scores = $student->scores->groupBy('subject_id');
+
+        return view('students.grades', compact('student', 'scores'));
+    }
 }

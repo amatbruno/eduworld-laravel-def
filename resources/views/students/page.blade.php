@@ -29,9 +29,8 @@
                         <p class="text-xl mr-16">{{ $s->name }}</p>
                         <div class="flex-1"></div>
                         <div class="flex gap-7">
-                            <livewire:action-user-btn url="/dashboard" text="Grades" color="" />
-                            <livewire:action-user-btn url="/dashboard" text="Message" color="green" />
-                            <livewire:action-user-btn url="/dashboard" text="Unlink" color="orange" />
+                            <livewire:action-user-btn :url="'/grades/' . $s->id" text="Grades" color="green" />
+                            <livewire:action-user-btn url="/dashboard" text="Unlink" color="red" />
                         </div>
                     </div>
                 @endforeach
