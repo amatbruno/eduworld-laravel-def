@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Navigate } from 'react-router-dom';
-import { ComposableMap, Geographies, Geography, Marker } from "react-simple-maps"
+import { ComposableMap, Geographies, Geography } from "react-simple-maps"
 import './Geography.css';
 import mapdata from '../../../utils/mapdata';
 import Question from './question/question';

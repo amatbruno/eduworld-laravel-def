@@ -8,7 +8,7 @@ export default function radialMenu() {
                 <span id='span-2'></span>
             </span>
             <div className="wrap">
-                <a className='link' href="#"><div></div></a>
+                <a className='link' href="/history"><div></div></a>
                 <a className='link' href="#"><div></div></a>
                 <a className='link' href="/geography"><div></div></a>
                 <a className='link' href="#"><div></div></a>

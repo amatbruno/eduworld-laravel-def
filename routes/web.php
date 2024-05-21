@@ -5,7 +5,6 @@ use App\Http\Controllers\AssignmentController;
 use App\Http\Controllers\EnrollmentController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
-use App\Http\Controllers\SubjectController;
 
 //Default routes
 Route::get('/', function () {
@@ -17,11 +16,15 @@ Route::get('/games', function () {
 Route::get('/geography', function () {
     return view('students.geography');
 });
+Route::get('/history', function () {
+    return view('students.geography');
+});
 
 
 //Routes for components
 Route::view('/games', 'students.games-menu');
 Route::view('/geography', 'students.geography');
+Route::view('/history', 'students.history');
 
 
 Route::get('/students', [StudentController::class, 'listStudents']);

@@ -1,4 +1,3 @@
-
 const comunities = [
     "Andalucía",
     "Aragón",
