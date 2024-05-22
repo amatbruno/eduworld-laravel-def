@@ -3,5 +3,38 @@
     height: 450px;
     background: white;
     border-radius: 20px;
-    padding: 20px;
+    padding: 40px;
+}
+
+.selected-answer {
+    background: #ffb95c80;
+    border: 1px solid #925300;
+}
+
+li {
+    padding: 12px;
+    border-radius: 15px;
+    transition: all .3s;
+    border: 1px solid transparent;
+    color: rgb(25, 0, 83);
+}
+
+li:hover {
+    background: #ffbc635b;
+    cursor: pointer;
+}
+
+button {
+    background: linear-gradient(#e0b479, #b8823c);
+    color: white;
+}
+
+#active-question-num {
+    background: -webkit-linear-gradient(#ffeace, #b86800);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h2 {
+    color: rgb(25, 0, 83);
 }
