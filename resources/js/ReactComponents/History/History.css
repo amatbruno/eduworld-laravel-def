@@ -38,3 +38,14 @@ button {
 h2 {
     color: rgb(25, 0, 83);
 }
+
+.result {
+    background:#e6ad64;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    margin: auto;
+    gap: 10px;
+    color: black;
+    padding: 4rem;
+}
