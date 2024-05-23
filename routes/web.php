@@ -10,15 +10,6 @@ use App\Http\Controllers\StudentController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/games', function () {
-    return view('students.games-menu');
-});
-Route::get('/geography', function () {
-    return view('students.geography');
-});
-Route::get('/history', function () {
-    return view('students.geography');
-});
 
 
 //Routes for components
@@ -39,7 +30,6 @@ Route::get('/add', [ManageAssignmentController::class, 'show'])->name('add.show'
 Route::post('/enroll', [EnrollmentController::class, 'enroll'])->name('enroll');
 Route::post('/add', [ManageAssignmentController::class, 'add'])->name('add');
 Route::delete('/delete/{id}', [ManageAssignmentController::class, 'delete'])->name('delete');
-
 
 
 Route::middleware([

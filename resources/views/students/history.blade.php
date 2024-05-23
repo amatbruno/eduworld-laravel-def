@@ -17,7 +17,7 @@
         </div>
     </header>
     <div class="flex flex-col justify-center items-center pt-5">
-        <h2 class="text-center font-semibold text-3xl text-white border-b-2 py-1 leading-tight">'History Game' - History📜
+        <h2 class="text-center font-semibold text-3xl text-white border-b-2 py-1 leading-tight">History Quiz Game - History📜
         </h2>
         <div id="root"></div>
     </div>

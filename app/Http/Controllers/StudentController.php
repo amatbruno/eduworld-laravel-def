@@ -8,6 +8,10 @@ use App\Models\Course;
 
 class StudentController extends Controller
 {
+    public function current(Request $request)
+    {
+        return response()->json($request->user());
+    }
     public function listStudents(Request $request)
     {
         $courseId = $request->input('course_id');

@@ -35,7 +35,7 @@ export default function GeographyComponent() {
                 [data]: 'incorrect'
             }));
             setRemainingCommunities(prevCommunities => prevCommunities.filter(community => community !== data));
-            setCountCorrect(countCorrect - 1);
+            setCountCorrect(countCorrect + 0);
         } else {
             setSelectedCommunity(prevSelectedCommunities => ({
                 ...prevSelectedCommunities,
