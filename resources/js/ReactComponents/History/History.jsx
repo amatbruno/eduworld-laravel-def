@@ -1,21 +1,23 @@
-import React, { useState } from 'react'
-import Question from './HistoryComponents/Question'
+import React, { useEffect, useState } from 'react';
+import Question from './HistoryComponents/Question';
 import trivia from '../../../utils/trivia';
 import './History.css';
 
 export default function History() {
-    const [activeQuestion, setActiveQuestion] = useState(0)
-    const [selectedAnswer, setSelectedAnswer] = useState('')
-    const [showResult, setShowResult] = useState(false)
-    const [selectedAnswerIndex, setSelectedAnswerIndex] = useState(null)
+    const [activeQuestion, setActiveQuestion] = useState(0);
+    const [selectedAnswer, setSelectedAnswer] = useState('');
+    const [showResult, setShowResult] = useState(false);
+    const [selectedAnswerIndex, setSelectedAnswerIndex] = useState(null);
     const [result, setResult] = useState({
         score: 0,
         correctAnswers: 0,
         wrongAnswers: 0,
-    })
+    });
 
     const { questions } = trivia
     const { question, choices, correctAnswer } = questions[activeQuestion]
+    const userId = 1;
+    const gameId = 1;
 
     const onClickNext = () => {
         setSelectedAnswerIndex(null)
@@ -46,6 +48,38 @@ export default function History() {
     }
 
     const addLeadingZero = (number) => (number > 9 ? number : `0${number}`)
+
+    useEffect(() => {
+        if (showResult) {
+            const saveScore = async () => {
+                try {
+                    const response = await fetch('http://localhost:8000/api/save-score', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${localStorage.getItem('token')}`,
+                        },
+                        body: JSON.stringify({
+                            user_id: userId,
+                            game_id: gameId,
+                            score: result.score,
+                        }),
+                    });
+
+                    if (response.ok) {
+                        const data = await response.json();
+                        console.log(data);
+                    } else {
+                        console.error('Failed to save score');
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                }
+            };
+
+            saveScore();
+        }
+    }, [showResult, result.score, userId]);
 
     return (
         <main className='mt-16'>
@@ -94,5 +128,4 @@ export default function History() {
             </section>
         </main>
     )
-
 }

@@ -5,13 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Course;
+use Illuminate\Support\Facades\Auth;
 
 class StudentController extends Controller
 {
-    public function current(Request $request)
-    {
-        return response()->json($request->user());
-    }
     public function listStudents(Request $request)
     {
         $courseId = $request->input('course_id');
@@ -24,7 +21,6 @@ class StudentController extends Controller
             $students = $course->users()->get();
         }
 
-        // Fetch all courses
         $courses = Course::all();
 
         return view('students.page', compact('students', 'courses'));
