@@ -1,9 +1,9 @@
 <x-app-layout>
     <main class="max-w-7xl mx-auto sm:px-6 lg:px-8 mt-10">
         <div class="flex flex-col items-start gap-14">
-            <a class="text-white text-xl font-black" href="{{ url('/students') }}"><-- Return to students view</a>
-                    <h1 class="text-2xl mb-3 text-white">Here will appear <strong><em>{{ $student->name }}</em></strong>
-                        grades:</h1>
+            <a class="text-white text-xl font-black" href="{{ url('/dashboard') }}"><-- Return to dashboard</a>
+                    <h1 class="text-2xl mb-3 text-white">Grades by <strong><em>{{ $student->name }}</em></strong>:
+                        </h1>
         </div>
         <section class="bg-white overflow-hidden shadow-xl sm:rounded-lg gap-24  p-5 flex items-center justify-center">
             <ul class="border w-1/2 p-2">

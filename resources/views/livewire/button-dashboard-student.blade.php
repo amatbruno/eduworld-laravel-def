@@ -1,7 +1,7 @@
 <div class="flex flex-col items-center gap-2 py-3">
     <a class="flex gap-4 items-center py-14 w-[300px] h-[150px] text-gray-400 text-center font-bold px-10 text-xl rounded-2xl border-4
         hover:text-gray-700 hover:border-4 hover:border-gray-700 transition-all"
-        href=" {{ url($routeManageGrades) }} ">
+        href=" {{ url('/grades/' . auth()->id()) }} ">
         <svg xmlns="http://www.w3.org/2000/svg" width="60" viewBox="0 0 24 24" fill="none" stroke="currentColor"
             stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
             class="icon icon-tabler icons-tabler-outline icon-tabler-school">
