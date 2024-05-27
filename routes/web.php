@@ -20,6 +20,8 @@ Route::view('/history', 'students.history');
 
 Route::get('/students', [StudentController::class, 'listStudents']);
 Route::get('/tasks', [AssignmentController::class, 'listAssignments']);
+Route::get('/mytasks', [AssignmentController::class, 'show']);
+Route::get('/task-detail/{id}', [AssignmentController::class, 'showTaskDetails']);
 Route::get('/grades/{id}', [StudentController::class, 'showGrades'])->name('grades');
 
 

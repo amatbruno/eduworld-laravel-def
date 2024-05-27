@@ -8,7 +8,7 @@ class ButtonDashboardStudent extends Component
 {
 
     public $routeManageGrades = '/'; //Prop for route students
-    public $routeManageTasks = '/'; //Prop for route grades
+    public $routeManageTasks = '/mytasks'; //Prop for route grades
     public $routeManageTraining = '/games'; //Prop for route training zone
 
     public function render()
